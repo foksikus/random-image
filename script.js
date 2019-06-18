@@ -8,7 +8,7 @@ const directoryPath = path.join(__dirname, 'images');
 const pickRandomNumber = (max) => Math.floor(Math.random() * max);
 
 const allowedFileTypes = [".jpg", ".png"];
-const hasAllowedEnding = file => allowedFileTypes.some(ending => file.endsWith(ending));
+const hasAllowedEnding = file => allowedFileTypes.some(ending => file.toLowerCase().endsWith(ending));
 
 app.get('/image', function (req, res) {
     fs.readdir(directoryPath, function (err, files) {
